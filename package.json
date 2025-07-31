@@ -1,0 +1,11 @@
+{
+  "name": "weather-api-app",
+  "version": "0.0.0",
+  "description": "Weather app using API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rukoro kenny crepin",
+  "license": "BSD-2-Clause"
+}

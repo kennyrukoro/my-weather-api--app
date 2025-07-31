@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+</head>
+<body>
+  <h1>Weather Checker 🌦️</h1>
+  <input type="text" id="cityInput" placeholder="Enter city name" />
+  <button onclick="getWeather()">Get Weather</button>
+  <div id="weatherResult"></div>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById('cityInput').value;
+      const response = await fetch(`/weather?city=${city}`);
+      const data = await response.json();
+
+      if (data.main) {
+        document.getElementById('weatherResult').innerHTML = 
+          `<p><strong>${data.name}</strong>: ${data.main.temp}°C, ${data.weather[0].description}</p>`;
+      } else {
+        document.getElementById('weatherResult').innerText = data.error || 'Error fetching weather.';
+      }
+    }
+  </script>
+</body>
+</html>
+
